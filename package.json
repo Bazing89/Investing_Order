@@ -10,14 +10,15 @@
     "web": "expo start --web",
     "export:web": "expo export -p web",
     "prebuild": "expo prebuild",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@supabase/supabase-js": "^2.104.1",
     "babel-preset-expo": "~54.0.10",
-    "expo": "~54.0.33",
+    "expo": "~54.0.34",
     "expo-constants": "~18.0.13",
     "expo-dev-client": "~6.0.20",
     "expo-splash-screen": "~31.0.13",
@@ -35,8 +36,19 @@
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
-    "eas-cli": "^18.8.1",
+    "eas-cli": "^19.0.8",
+    "patch-package": "^8.0.0",
     "typescript": "~5.9.2"
+  },
+  "overrides": {
+    "ajv": "^8.20.0",
+    "diff": "^8.0.3",
+    "minimatch": "^5.1.9",
+    "node-forge": "^1.4.0",
+    "postcss": "^8.5.15",
+    "tar": "^7.5.15",
+    "uuid": "^11.1.1",
+    "yaml": "^2.9.0"
   },
   "private": true
 }

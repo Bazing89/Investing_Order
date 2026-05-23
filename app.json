@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "NexusOwieBLE",
+    "name": "NexusBMS",
     "slug": "NexusOwieBLE",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -15,16 +15,24 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.nexusowie.ble"
+      "bundleIdentifier": "com.nexusbattery.nexusbms",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.nexusowie.ble",
+      "package": "com.nexusbattery.nexusbms",
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -36,10 +44,18 @@
         "react-native-ble-plx",
         {
           "isBackgroundEnabled": true,
-          "modes": ["central", "peripheral"],
+          "modes": [
+            "central",
+            "peripheral"
+          ],
           "bluetoothAlwaysPermission": "Allow $(PRODUCT_NAME) to use Bluetooth to find and connect to your devices."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "73eca4e1-6ce6-4368-a663-caf86bde3028"
+      }
+    }
   }
 }
