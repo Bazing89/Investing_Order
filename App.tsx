@@ -7,6 +7,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppShell } from './components/AppShell';
 import { DataHeader } from './components/DataHeader';
+import { useOwieBleStatus } from './hooks/useOwieBleStatus';
 import { AppSettingsScreen } from './screens/AppSettingsScreen';
 import { BleConnectScreen } from './screens/BleConnectScreen';
 import { DataScreen } from './screens/DataScreen';
@@ -49,6 +50,12 @@ export default function App() {
   const handleDisconnect = useCallback(() => {
     backToConnection();
   }, [backToConnection]);
+
+  const isDemo = device?.id === 'demo';
+  const { status, connectionState, error } = useOwieBleStatus({
+    deviceId: device?.id ?? null,
+    enabled: connected && !isDemo,
+  });
 
   const webFill =
     Platform.OS === 'web'
@@ -94,7 +101,19 @@ export default function App() {
   }
 
   const displayName = device?.name || 'Nexus Owie';
-  const subtitle = device ? `Live · ${device.id === 'demo' ? 'demo' : 'device'}` : undefined;
+  const subtitle = isDemo
+    ? 'Demo · sample data'
+    : connectionState === 'connecting'
+      ? 'Connecting…'
+      : connectionState === 'connected'
+        ? status
+          ? `Live · ${device?.name ?? 'device'}`
+          : 'Connected · waiting for data'
+        : connectionState === 'error'
+          ? 'Connection error'
+          : device
+            ? `Live · ${device.name ?? 'device'}`
+            : undefined;
 
   return (
     <SafeAreaView className="flex-1 bg-black" edges={['top', 'left', 'right', 'bottom']}>
@@ -112,7 +131,13 @@ export default function App() {
             onBack={backToConnection}
             onSettingsPress={() => setAppSettings(true)}
           />
-          <DataScreen subtitle={subtitle} />
+          <DataScreen
+            subtitle={subtitle}
+            status={status}
+            connectionState={connectionState}
+            error={error}
+            isDemo={isDemo}
+          />
         </AppShell>
       </View>
     </SafeAreaView>
