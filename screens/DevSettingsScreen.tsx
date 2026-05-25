@@ -10,11 +10,11 @@ export function DevSettingsScreen({ go }: Props) {
     <>
       <OwieHeader title="Owie Developer Settings" subtitle="(NexusOwie-BLE)" />
       <View style={styles.p} />
-      <OwieButton onPress={() => go('wifi')}>Wifi Configuration</OwieButton>
+      <OwieButton title="Wifi Configuration" onPress={() => go('wifi')} />
       <View style={styles.p} />
-      <OwieButton onPress={() => go('monitor')}>Monitor BMS data</OwieButton>
+      <OwieButton title="Monitor BMS data" onPress={() => go('monitor')} />
       <View style={styles.p} />
-      <OwieButton onPress={() => go('settings')}>Back</OwieButton>
+      <OwieButton title="Back" onPress={() => go('settings')} />
     </>
   );
 }

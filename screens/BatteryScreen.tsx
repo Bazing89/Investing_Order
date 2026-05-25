@@ -29,11 +29,11 @@ export function BatteryScreen({ go }: Props) {
         <StatRow label="Current discharge depth" value={`${M.depthMah} mAh`} />
       </OwieCard>
       <View style={styles.p} />
-      <OwieButton onPress={() => {}}>Reset stats</OwieButton>
+      <OwieButton title="Reset stats" onPress={() => {}} />
       <View style={styles.p} />
-      <OwieButton onPress={() => {}}>Reset Settings</OwieButton>
+      <OwieButton title="Reset Settings" onPress={() => {}} />
       <View style={styles.p} />
-      <OwieButton onPress={() => go('status')}>Back</OwieButton>
+      <OwieButton title="Back" onPress={() => go('status')} />
     </>
   );
 }

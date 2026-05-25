@@ -1,15 +1,14 @@
-import { type ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { bodyFont, theme } from '../../theme/owieTheme';
 
 type Props = {
-  children: ReactNode;
+  title: string;
   onPress: () => void;
   variant?: 'primary' | 'secondary' | 'danger';
   disabled?: boolean;
 };
 
-export function OwieButton({ children, onPress, variant = 'primary', disabled }: Props) {
+export function OwieButton({ title, onPress, variant = 'primary', disabled }: Props) {
   const isSecondary = variant === 'secondary';
   const isDanger = variant === 'danger';
   return (
@@ -32,7 +31,7 @@ export function OwieButton({ children, onPress, variant = 'primary', disabled }:
             isDanger && styles.labelDanger,
           ]}
         >
-          {children}
+          {title}
         </Text>
       </View>
     </Pressable>

@@ -64,17 +64,16 @@ export function SettingsScreen({ go }: Props) {
         </OwieFieldset>
         <View style={styles.hr} />
         <OwieButton
+          title="Save"
           onPress={() => {
             // placeholder — later POST to /settings
           }}
-        >
-          Save
-        </OwieButton>
+        />
       </View>
       <View style={styles.p} />
-      <OwieButton onPress={() => go('dev')}>Developer Settings</OwieButton>
+      <OwieButton title="Developer Settings" onPress={() => go('dev')} />
       <View style={styles.p} />
-      <OwieButton onPress={() => go('status')}>Back</OwieButton>
+      <OwieButton title="Back" onPress={() => go('status')} />
     </>
   );
 }

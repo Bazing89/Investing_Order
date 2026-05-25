@@ -47,10 +47,10 @@ export function WifiScreen({ go }: Props) {
           onChangeText={setPass}
           secureTextEntry
         />
-        <OwieButton onPress={() => {}}>Save</OwieButton>
+        <OwieButton title="Save" onPress={() => {}} />
       </OwieCard>
       <View style={styles.p} />
-      <OwieButton onPress={() => go('dev')}>Back</OwieButton>
+      <OwieButton title="Back" onPress={() => go('dev')} />
     </>
   );
 }

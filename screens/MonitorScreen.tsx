@@ -29,17 +29,16 @@ export function MonitorScreen({ go }: Props) {
         scrollEnabled
       />
       <OwieButton
+        title={running ? 'Stop' : 'Connect'}
         onPress={() => {
           setRunning(!running);
           setLog((prev) =>
             running ? prev + '\n[stopped]' : prev + '\n[mock: connect would open ws://…/rawdata]',
           );
         }}
-      >
-        {running ? 'Stop' : 'Connect'}
-      </OwieButton>
+      />
       <View style={styles.row}>
-        <OwieButton onPress={() => go('dev')}>Back</OwieButton>
+        <OwieButton title="Back" onPress={() => go('dev')} />
       </View>
       <OwieCard>
         <Text style={styles.stats}>
