@@ -1,61 +1,42 @@
 {
   "expo": {
-    "name": "NexusBMS",
-    "slug": "NexusOwieBLE",
+    "name": "rao",
+    "slug": "rao",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "scheme": "nexusowieble",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+    "icon": "./assets/images/icon.png",
+    "scheme": "rao",
+    "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.nexusbattery.nexusbms",
-      "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+      "icon": "./assets/expo.icon"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "package": "com.nexusbattery.nexusbms",
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "permissions": [
-        "android.permission.BLUETOOTH",
-        "android.permission.BLUETOOTH_ADMIN",
-        "android.permission.BLUETOOTH_CONNECT"
-      ]
+      "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "output": "server",
+      "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-dev-client",
-      "expo-system-ui",
+      "expo-router",
       [
-        "react-native-ble-plx",
+        "expo-splash-screen",
         {
-          "isBackgroundEnabled": true,
-          "modes": [
-            "central",
-            "peripheral"
-          ],
-          "bluetoothAlwaysPermission": "Allow $(PRODUCT_NAME) to use Bluetooth to find and connect to your devices."
+          "backgroundColor": "#208AEF",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 76
         }
       ]
     ],
-    "extra": {
-      "eas": {
-        "projectId": "73eca4e1-6ce6-4368-a663-caf86bde3028"
-      }
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
     }
   }
 }
