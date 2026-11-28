@@ -1,0 +1,48 @@
+{
+  "year": 2026,
+  "version": "2026.1-preview",
+  "verifiedAt": "2026-11-27",
+  "reviewStatus": "Source-checked; independent tax review pending",
+  "rates": [0.1, 0.12, 0.22, 0.24, 0.32, 0.35, 0.37],
+  "single": {
+    "thresholds": [12400, 50400, 105700, 201775, 256225, 640600],
+    "deduction": 16100,
+    "rothPhaseout": [153000, 168000]
+  },
+  "joint": {
+    "thresholds": [24800, 100800, 211400, 403550, 512450, 768700],
+    "deduction": 32200,
+    "rothPhaseout": [242000, 252000]
+  },
+  "workplace": 24500,
+  "catchUp": 8000,
+  "superCatchUp": 11250,
+  "rothCatchUpWages": 150000,
+  "ira": 7500,
+  "iraCatchUp": 1100,
+  "hsaSingle": 4400,
+  "hsaFamily": 8750,
+  "hsaCatchUp": 1000,
+  "sources": [
+    {
+      "title": "2026 federal brackets & deductions · Rev. Proc. 2025-32 §4.01, §4.14",
+      "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf"
+    },
+    {
+      "title": "Retirement limits · Notice 2025-67",
+      "url": "https://www.irs.gov/irb/2025-49_IRB"
+    },
+    {
+      "title": "HSA limits · Rev. Proc. 2025-19 §2",
+      "url": "https://www.irs.gov/pub/irs-drop/rp-25-19.pdf"
+    },
+    {
+      "title": "IRA eligibility & phaseout worksheet · Publication 590-A",
+      "url": "https://www.irs.gov/publications/p590a"
+    },
+    {
+      "title": "HSA eligibility · Publication 969",
+      "url": "https://www.irs.gov/publications/p969"
+    }
+  ]
+}
